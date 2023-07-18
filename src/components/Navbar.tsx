@@ -34,7 +34,7 @@ export const Navbar = () => {
             <p className="text-2xl font-bold roboto px-5">martinsson.io</p>
             </div>
             
-            {showMenu && <div className="absolute mt-5 flex md:hidden z-20 bg-white p-3 w-full dark:bg-black border-t-2 border-indigo-600">
+            {showMenu && <div onClick={() => {setShowMenu(false)}} className="absolute mt-5 flex md:hidden z-20 bg-white p-3 w-full dark:bg-black border-t-2 border-indigo-600">
 
 <div className="flex flex-col justify-start gap-1">
 {links.map((link: any, index: number) => {
