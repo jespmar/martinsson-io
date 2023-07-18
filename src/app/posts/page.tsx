@@ -2,7 +2,7 @@ import { Layout } from "@/components/Layout"
 import { PostCard } from "@/components/PostCard"
 import { getAllPosts } from "@/lib/api"
 
-export const BlogPage = () => {
+export default async function Post() {
 
     const posts:any = getAllPosts(['slug', 'title', 'excerpt', 'coverImage', 'date'])
 
@@ -17,4 +17,3 @@ export const BlogPage = () => {
 
 }
 
-export default BlogPage
