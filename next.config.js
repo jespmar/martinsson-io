@@ -8,6 +8,12 @@ const nextConfig = {
               port: '3000',
               pathname: '/assets/**',
             },
+            {
+              protocol: 'https',
+              hostname: 'localhost',
+              port: '443',
+              pathname: '/assets/**',
+            },
           ],
     }
 }
