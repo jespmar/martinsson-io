@@ -9,9 +9,7 @@ const nextConfig = {
               pathname: '/assets/**',
             },
             {
-              protocol: 'https',
-              hostname: 'localhost',
-              port: '443',
+              hostname: 'martinsson-io.vercel.app',
               pathname: '/assets/**',
             },
           ],
