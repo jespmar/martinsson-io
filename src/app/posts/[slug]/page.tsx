@@ -48,7 +48,7 @@ export default async function Post({ params}: Props) {
 <Layout>
 <p className='text-base'>{post.date}</p>
 <h1 className='text-4xl roboto'>{post.title}</h1>
-<Image className='w-full' width={1000} height={1000} src={`${baseURL}${post.coverImage}`} alt="cover image" />
+<Image className='w-full' width={1000} height={1000} src={`${post.coverImage}`} alt="cover image" />
 <p className='text-xs text-gray-500 mb-3 mt-2'>{`${baseURL}${post.coverImage}`}</p>
 
 {/* <BlogPost elements={elements} /> */}
