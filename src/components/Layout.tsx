@@ -14,7 +14,7 @@ export const Layout = (props:any) => {
         
         <div className="bg-white dark:bg-gray-900">
                 <div className="w-full flex flex-col">
-                    <div className="w-full bg-indigo-50 dark:bg-indigo-900 border-b-2 border-indigo-600 pt-4 dark:text-white hidden md:flex">
+                    <div className="w-full bg-indigo-50 dark:bg-slate-900 border-b-2 border-indigo-600 pt-4 dark:text-white hidden md:flex">
                         <LogoHeader />
                     </div>
                     <div className="w-full bg-gray-50 dark:bg-gray-800 py-5 dark:text-white border-b border-indigo-600">

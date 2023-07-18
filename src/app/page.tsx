@@ -26,7 +26,7 @@ export default function Home() {
         <div className='w-full flex gap-10 my-5 md:flex-row flex-col'>
           <div className='md:w-2/3 w-full self-center order-2 md:order-1 px-5'>
           <p className='text-lg roboto'>This is a blog dedicated to my life as a Nordic IT-Leader, Software Developer & Father of two (Three if you count the dog). <br/><br/> I have a love for technology, coding, music, travel and everything with buttons - I will try to document my journey here as much as I can.</p>
-          <button className='rounded-lg bg-gray-900 text-white p-2 text-3xl mt-5 roboto hover:bg-indigo-600'>Read More Here</button>
+          <button className='rounded-lg bg-gray-900 text-white p-2 text-2xl mt-5 roboto hover:bg-indigo-600 w-full'>Read More Here</button>
           </div>
           <div className='w-56 mx-auto md:order-2 order-1'>
           <Image className='rounded-full aspect-square object-cover' src={me} alt="me" />
