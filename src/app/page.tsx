@@ -5,6 +5,7 @@ import me from "../../public/me.jpg"
 import { LatestPosts } from '@/components/LatestPosts'
 
 import { BsGithub, BsLinkedin, BsInstagram, BsYoutube } from "react-icons/bs";
+import { Social } from '@/components/Social'
 
 export default function Home() {
   return (
@@ -31,13 +32,7 @@ export default function Home() {
           <Image className='rounded-full aspect-square object-cover' src={me} alt="me" />
           </div>
         </div>
-        <div className='flex max-w-md justify-between mx-auto my-5'>
-          <div><BsGithub className='h-8 w-8 hover:text-indigo-500'/></div>
-          <div><BsLinkedin className='h-8 w-8 hover:text-blue-600'/></div>
-          <div><BsInstagram className='h-8 w-8 hover:text-fuchsia-600'/></div>
-          <div><BsYoutube className='h-8 w-8 hover:text-red-500'/></div>
-
-        </div>
+        <Social />
         </div>
         
       </div>

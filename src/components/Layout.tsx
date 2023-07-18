@@ -1,6 +1,7 @@
 import Head from "next/head"
 import { LogoHeader } from "./Header"
 import { Navbar } from "./Navbar"
+import { Social } from "./Social"
 
 export const Layout = (props:any) => {
 
@@ -25,7 +26,8 @@ export const Layout = (props:any) => {
                     <div className="w-full mx-auto p-2 bg-gray-900 dark:bg-gray-800 h-48">
                         <nav className="w-full flex justify-center flex-col self-center h-full roboto mb-6 mt-2">
                             <p className="self-center text-3xl text-white font-bold">martinsson.io</p>
-                            <p className="roboto text-indigo-500 self-center">jesper@martinsson.io</p>
+                            <p className="roboto text-indigo-500 self-center mb-4">jesper@martinsson.io</p>
+                            <Social />
                         </nav>
                     </div>
                 </div>
