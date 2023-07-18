@@ -8,7 +8,7 @@ export const LatestPosts = () => {
     return (
         <div className='p-2 max-w-6xl mx-auto'>
         <p className='text-center roboto text-4xl underline font-bold my-5'>Latest Posts</p>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
             {posts.map((p:any) => {
                 return <PostPreview key={p.slug} post={p} />
             })}
