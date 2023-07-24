@@ -1,0 +1,1 @@
+rsync -avh --include='*/' --include='*.jpg' --include='*.png' --include='*.gif' --include='*.jpeg' --include='*.svg' --exclude='*' _posts/ public/assets/blog

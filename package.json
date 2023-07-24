@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run sync:post && next dev",
+    "sync:post": "sh sync_post_images.sh",
+    "prebuild": "npm run sync:post",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
