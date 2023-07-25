@@ -5,6 +5,7 @@ import { NavLink } from "./NavLink"
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 import { IoMdClose } from "react-icons/io";
+import Link from "next/link";
 
 
 const links = [
@@ -31,7 +32,7 @@ export const Navbar = () => {
         </nav>
         <div className="px-2 flex md:hidden justify-between self-center">
             {!showMenu ? <GiHamburgerMenu onClick={toggleMenu} className="w-8 h-8 cursor-pointer hover:text-indigo-500 self-center" /> : <IoMdClose onClick={toggleMenu} className="w-8 h-8 cursor-pointer hover:text-indigo-500 my-auto" />}
-            <p className="text-2xl font-bold roboto px-5">martinsson.io</p>
+            <Link href={"/"} className="text-2xl font-bold roboto px-5">martinsson.io</Link>
             </div>
             
             {showMenu && <div onClick={() => {setShowMenu(false)}} className="absolute mt-5 flex md:hidden z-20 bg-white p-3 w-full dark:bg-black border-t-2 border-indigo-600 roboto">

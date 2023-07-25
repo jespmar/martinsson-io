@@ -3,6 +3,7 @@ import { join } from 'path'
 import matter from 'gray-matter'
 
 const postsDirectory = join(process.cwd(), '_posts')
+const pagesDirectory = join(process.cwd(), '_pages')
 
 export function getPostSlugs() {
   console.log(fs.readdirSync(postsDirectory))
@@ -37,6 +38,36 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   })
 
   return items
+}
+
+export const getPage = (page:string, fields: string[] = []) => {
+
+  const fullPath = join(pagesDirectory, `${page}`,`${page}.md`)
+  const fileContents = fs.readFileSync(fullPath, 'utf8')
+  const { data, content } = matter(fileContents)
+
+  type Items = {
+    [key: string]: string
+  }
+
+  const items: Items = {}
+
+    // Ensure only the minimal needed data is exposed
+    fields.forEach((field) => {
+      if (field === 'slug') {
+        items[field] = page
+      }
+      if (field === 'content') {
+        items[field] = content
+      }
+  
+      if (typeof data[field] !== 'undefined') {
+        items[field] = data[field]
+      }
+    })
+  
+    return items
+
 }
 
 export function getAllPosts(fields: string[] = []) {

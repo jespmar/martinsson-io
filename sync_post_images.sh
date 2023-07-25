@@ -3,3 +3,6 @@
 cd _posts
 find . -name '*.jpg' | cpio -pdm  ../public/assets/blog
 cd ../
+cd _pages
+find . -name '*.jpg' | cpio -pdm  ../public/assets/pages
+cd ../
