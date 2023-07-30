@@ -1,11 +1,16 @@
 ---
 title: 'About Me'
 excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
-coverImage: '/assets/pages/about/cover.jpg'
+coverImage: '/assets/pages/about/me.jpg'
 date: '2023-03-10'
 ---
 
-# About Me
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+# Hello World!
+My name is Jesper Martinsson. I am an IT-Nerd, Software Developer and Lover of everything with buttons.
+I am born, raised and still living in Sweden.
 
-Venenatis cras sed felis eget velit. **Consectetur** libero id *faucibus* nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+On this page/blog I intend to write stories and thoughts about my daily life as a professional in the IT workspace but also from my private life as an IT-nerd, Music maker and a father of two girls.
+
+At my current day job I work as a Developer / IT-Manager for an In-house IT team at Raksystems.
+
+On my spare time I like to hang out with my family and travel, often with our caravan and electric car (Yes thats a thing). I also play guitar in a band - I do not have any hopes of becoming a rock star, but you never know.
