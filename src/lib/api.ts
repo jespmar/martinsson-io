@@ -9,8 +9,6 @@ export function getPostSlugs() {
 
   const slugs = []
 
-  console.log(fs.readdirSync(postsDirectory))
-
   for (let slug of fs.readdirSync(postsDirectory)) {
 
     const fullPath = join(postsDirectory, `${slug}`,`${slug}.md`)
@@ -41,7 +39,6 @@ export const getAllPostTags = () => {
   }
 
   const slugs = getPostSlugs()
-  console.log({slugs})
 
   for (let slug of slugs) {
     const tags = getTagsBySlug(slug)

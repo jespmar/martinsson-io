@@ -13,7 +13,7 @@ export default async function Portfolio() {
     return (
         <Layout>
 <div className="text-center text-5xl roboto font-bold underline my-10 dark:text-white">{page.title}</div>
-<Image className='w-full' width={1000} height={1000} src={`${page.coverImage}`} alt="cover image" />
+<Image className='w-full aspect-square object-cover' width={1000} height={1000} src={`${page.coverImage}`} alt="cover image" />
 
 {/* <BlogPost elements={elements} /> */}
 <div

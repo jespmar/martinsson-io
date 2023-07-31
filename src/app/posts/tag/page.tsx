@@ -6,9 +6,6 @@ export default async function Post() {
 
     const posts:any = getAllPosts(['slug', 'title', 'excerpt', 'coverImage', 'date'])
 
-    const tags = getAllPostTags()
-
-    console.log({tags})
 
     return (
         <Layout>

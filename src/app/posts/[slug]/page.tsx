@@ -28,7 +28,6 @@ export async function generateStaticParams() {
 }
 
 export default async function Post({ params}: Props) {
-  console.log(params)
   const { slug } = params
 
 

@@ -6,10 +6,6 @@ export default async function Post() {
 
     const posts:any = getAllPosts(['slug', 'title', 'excerpt', 'coverImage', 'date'])
 
-    const tags = getAllPostTags()
-
-    console.log({tags})
-
     return (
         <Layout>
             <div className="text-center text-5xl roboto font-bold underline my-10 dark:text-white">Blog</div>
