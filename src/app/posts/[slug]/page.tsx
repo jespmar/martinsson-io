@@ -1,3 +1,4 @@
+
 import ErrorPage from 'next/error'
 import { getPostBySlug, getAllPosts } from "../../../lib/api"
 import Head from 'next/head'
@@ -9,6 +10,7 @@ import { baseURL } from '@/config'
 import Image from 'next/image'
 
 import markdownStyles from "../../../components/markdown-styles.module.css"
+import { Share } from '@/components/Share'
 
 
 type Props = {
@@ -37,6 +39,7 @@ export default async function Post({ params}: Props) {
     'content',
     'ogImage',
     'coverImage',
+    "excerpt"
   ])
 
 
@@ -56,6 +59,7 @@ export default async function Post({ params}: Props) {
         className={markdownStyles['markdown']}
         dangerouslySetInnerHTML={{ __html: content }}
       />
+      <Share slug={post.slug} excerpt={post.excerpt} />
 </Layout>
     </div>
   )
