@@ -26,3 +26,7 @@
     @apply text-xl mb-1 leading-snug font-bold;
     font-family: 'Roboto Slab', serif;
   }
+
+  .markdown img {
+    @apply rounded
+  }

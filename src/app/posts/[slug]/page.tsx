@@ -11,6 +11,7 @@ import Image from 'next/image'
 
 import markdownStyles from "../../../components/markdown-styles.module.css"
 import { Share } from '@/components/Share'
+import { Tags } from '@/components/Tags'
 
 
 type Props = {
@@ -39,7 +40,8 @@ export default async function Post({ params}: Props) {
     'content',
     'ogImage',
     'coverImage',
-    "excerpt"
+    "excerpt",
+    "tags"
   ])
 
 
@@ -49,16 +51,17 @@ export default async function Post({ params}: Props) {
   return (
 <div>
 <Layout>
-<p className='text-base'>{post.date}</p>
-<h1 className='text-4xl roboto'>{post.title}</h1>
-<Image className='w-full' width={1000} height={1000} src={`${post.coverImage}`} alt="cover image" />
-<p className='text-xs text-gray-500 mb-3 mt-2'>{`${baseURL}${post.coverImage}`}</p>
+
+<h1 className='text-5xl font-bold roboto text-center mt-4'>{post.title}</h1>
+<Tags tags={post.tags} />
+<Image className='w-full mb-3 rounded' width={1000} height={1000} src={`${post.coverImage}`} alt="cover image" />
 
 {/* <BlogPost elements={elements} /> */}
 <div
         className={markdownStyles['markdown']}
         dangerouslySetInnerHTML={{ __html: content }}
       />
+      <p className='text-sm font-bold italic mb-4'>Published {post.date}</p>
       <Share slug={post.slug} excerpt={post.excerpt} />
 </Layout>
     </div>
