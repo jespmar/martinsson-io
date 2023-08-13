@@ -52,7 +52,9 @@ export default async function Post({ params}: Props) {
 <Layout>
 
 <h1 className='text-5xl font-bold roboto text-center mt-4'>{post.title}</h1>
-<Tags tags={post.tags} />
+<div className='flex w-full'>
+<div className='mx-auto mb-3 border-b border-indigo-800'><Tags tags={post.tags} /></div>
+</div>
 <Image className='w-full mb-3 rounded' width={1000} height={1000} src={`${post.coverImage}`} alt="cover image" />
 
 {/* <BlogPost elements={elements} /> */}
