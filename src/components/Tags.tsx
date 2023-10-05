@@ -1,10 +1,15 @@
 import { Tag } from "./Tag"
 
-export const Tags = ({tags}:any) => {
+export const Tags = ({tags, center}:any) => {
+
+    const align = () => {
+        if (center) return "justify-center"
+        else return ""
+    }
 
 
     return (
-        <div className="flex gap-1 my-2 w-full justify-center">
+        <div className={`flex w-full ${align()}`}>
             {tags.map((tag:string, index:number) => {
                 return (<Tag key={index} tag={tag} />)
             })}

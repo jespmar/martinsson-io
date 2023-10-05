@@ -4,9 +4,9 @@ excerpt: 'This is just a small and simple test on how my workflow works from an 
 coverImage: '/assets/blog/test-from-ipad-pro/cover.jpg'
 date: '2023-08-04'
 tags:
-    - "test"
-    - "ipad"
-    - “apple”
+    - test
+    - ipad
+    - apple
    
 ---
 

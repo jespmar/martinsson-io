@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "rimraf public/assets/blog && rimraf public/assets/pages && npm run sync:post && next dev",
+    "dev": "rimraf public/assets/blog && rimraf public/assets/pages && npm run compress && next dev",
     "sync:post": "sh sync_post_images.sh",
+    "compress": "node imageCompression.js",
     "build": "next build",
-    "prebuild": "npm run sync:post",
+    "prebuild": "npm run compress",
     "start": "next start",
     "lint": "next lint"
   },
@@ -17,9 +18,11 @@
     "autoprefixer": "10.4.14",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.8",
+    "gifsicle": "^5.2.1",
     "gray-matter": "^4.0.3",
     "next": "13.4.8",
     "next-share": "^0.24.0",
+    "pngquant-bin": "^6.0.1",
     "postcss": "8.4.25",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -29,5 +32,8 @@
     "rimraf": "^5.0.1",
     "tailwindcss": "3.3.2",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "compress-images": "^2.0.5"
   }
 }

@@ -8,7 +8,7 @@ import { useEffect } from "react"
 export const Share = ({slug, excerpt}:any) => {
 
     return (
-        <div className="p-3 rounded bg-gray-50 border mb-2 dark:bg-gray-800 dark:text-white">
+        <div className="p-3 rounded bg-gray-50 border-indigo-800 border-dashed border-2 mb-2 dark:bg-gray-800 dark:text-gray-300">
             <h1 className="text-xl font-bold">Did you like this post?</h1>
             <h3>Feel free to share it!</h3>
             <div className="flex gap-1 mt-2">

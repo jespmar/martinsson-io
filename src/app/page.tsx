@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <Layout fullWidth={true}>
       <div className='relative'>
-      <Image className='h-96 object-cover' alt='cover image' src={cover} />
-      <div className='absolute top-0 h-96 w-full'>
+      <Image className='object-cover h-60' alt='cover image' src={cover} />
+      <div className='absolute top-0 h-60 w-full'>
         <div className='w-full h-full flex'>
           <div className='w-full self-center text-center'>
           <p className='roboto text-white font-bold text-6xl drop-shadow-lg'>martinsson.io</p>
