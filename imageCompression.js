@@ -3,7 +3,7 @@ const compress_images = require("compress-images");
 
 function CompressBlogPosts() {
   compress_images(
-    "_posts/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}",
+    "_posts/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif,heic,HEIC}",
     "public/assets/blog/",
     { compress_force: false, statistic: true, autoupdate: true },
     false,
@@ -23,7 +23,7 @@ function CompressBlogPosts() {
 
 function CompressPages() {
     compress_images(
-      "_pages/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}",
+      "_pages/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif,heic,HEIC}",
       "public/assets/pages/",
       { compress_force: false, statistic: true, autoupdate: true },
       false,
