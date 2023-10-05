@@ -2,7 +2,7 @@
 title: 'An upgraded start of this jorney'
 excerpt: 'This journey to Transylvania is of to a great start. Since the plane departs so early in the morning, we decided to take a hotel night at the airport.'
 coverImage: '/assets/blog/upgraded-start-of-journey/cover.png'
-date: '2023-03-10'
+date: '2023-10-04'
 tags:
     - "Travel"
     - "Transylvania"
