@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "rimraf public/assets/blog && rimraf public/assets/pages && npm run compress && next dev",
+    "dev": "npm run compress && next dev",
     "sync:post": "sh sync_post_images.sh",
     "compress": "node imageCompression.js",
     "build": "next build",
@@ -20,6 +20,7 @@
     "eslint-config-next": "13.4.8",
     "gifsicle": "^5.2.1",
     "gray-matter": "^4.0.3",
+    "heic-convert": "^1.2.4",
     "next": "13.4.8",
     "next-share": "^0.24.0",
     "pngquant-bin": "^6.0.1",
