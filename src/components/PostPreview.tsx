@@ -9,10 +9,10 @@ export const PostPreview = ({post}:any) => {
     return (
 
         <div>
-        <div className="flex flex-col h-auto bg-white rounded-lg md:flex-row dark:border-gray-700 dark:bg-gray-900 p-4 my-2">
+        <div className="flex flex-col h-auto bg-white rounded-lg md:flex-row dark:border-gray-700 dark:bg-gray-900 p-4 ">
         <div className="flex flex-col">
         <Link href={`/posts/${post.slug}`}>
-        <Image className="md:object-cover rounded aspect-[4/3]" width={1000} height={1000} src={`${post.coverImage}`} alt="cover image" />
+        <Image className="rounded object-cover aspect-[4/3]" width={1000} height={1000} src={`${post.coverImage}`} alt="cover image" />
         </Link>
         <div className="flex mt-1 text-gray-700 dark:text-gray-300">
             <div className="self-center">

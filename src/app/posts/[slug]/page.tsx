@@ -55,7 +55,7 @@ export default async function Post({ params}: Props) {
 <div className='flex w-full'>
 <div className='mx-auto mb-3 border-b border-indigo-800'><Tags tags={post.tags} /></div>
 </div>
-<Image className='w-full mb-3 rounded' width={1000} height={1000} src={`${post.coverImage}`} alt="cover image" />
+<Image className='w-full mb-3 rounded object-cover aspect-[4/3]' width={1000} height={1000} src={`${post.coverImage}`} alt="cover image" />
 
 {/* <BlogPost elements={elements} /> */}
 <div

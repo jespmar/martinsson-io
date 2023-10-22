@@ -18,7 +18,10 @@ await (async () => {
   const ext = path.extname(filePath)
   const newPath = filePath.replace(ext, ".png")
 
-  await promisify(fs.writeFile)(newPath, outputBuffer);
+  if (!path.existSync(newPath)) {
+    await promisify(fs.writeFile)(newPath, outputBuffer);
+  } else return
+  
 })();
 
 }

@@ -7,7 +7,7 @@ export const Layout = (props:any) => {
 
     const contentWidth = () => {
         if (props.fullWidth) return "w-full"
-        else return "max-w-4xl p-2"
+        else return "max-w-6xl p-6"
     }
 
     return (
