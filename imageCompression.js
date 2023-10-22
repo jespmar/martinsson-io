@@ -6,9 +6,9 @@ const { promisify } = require('util');
 const convert = require('heic-convert');
 
 
-const heicConvert = (filePath) => {
+const heicConvert = async (filePath) => {
 
-(async () => {
+await (async () => {
   const inputBuffer = await promisify(fs.readFile)(filePath);
   const outputBuffer = await convert({
     buffer: inputBuffer, // the HEIC file buffer
@@ -23,7 +23,8 @@ const heicConvert = (filePath) => {
 
 }
 
-function CompressBlogPosts() {
+async function CompressBlogPosts() {
+  console.log("Compressing Post images")
   compress_images(
     "_posts/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif,heic,HEIC}",
     "public/assets/blog/",
@@ -43,7 +44,8 @@ function CompressBlogPosts() {
   );
 }
 
-function CompressPages() {
+async function CompressPages() {
+  console.log("Compressing Pages images")
     compress_images(
       "_pages/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif,heic,HEIC}",
       "public/assets/pages/",
@@ -63,22 +65,24 @@ function CompressPages() {
     );
   }
 
-  const loopFolders = () => {
+  const loopFolders = async () => {
+
+    console.log("Converting HEIC to png")
 
     var moveFrom = "_posts/";
 
     // Loop through all the files in the temp directory
-fs.readdir(moveFrom, function (err, files) {
+fs.readdir(moveFrom, async function (err, files) {
   if (err) {
     console.error("Could not list the directory.", err);
     process.exit(1);
   }
 
-  files.forEach(function (file, index) {
+  files.forEach(async function (file, index) {
     // Make one pass and make the file complete
     var fromPath = path.join(moveFrom, file);
 
-    fs.stat(fromPath, function (error, stat) {
+    fs.stat(fromPath, async function (error, stat) {
       if (error) {
         console.error("Error stating file.", error);
         return;
@@ -89,13 +93,13 @@ fs.readdir(moveFrom, function (err, files) {
       else if (stat.isDirectory())
 
         console.log("'%s' is a directory.", fromPath);
-        fs.readdir(fromPath, (err, files2) => {
+        fs.readdir(fromPath, async (err, files2) => {
 
           if (files2) {
-           files2.forEach((file, index) => {
+           files2.forEach(async (file, index) => {
             
             var filePath = path.join(fromPath, file);
-            fs.stat(filePath, (error, stat) => {
+            fs.stat(filePath, async (error, stat) => {
               if (stat.isFile) {
                 //console.log(filePath)
 
@@ -103,25 +107,81 @@ fs.readdir(moveFrom, function (err, files) {
                 if (extension === ".heic" || extension === ".HEIC") {
                   // Transform file here
                   console.log(filePath)
-                  heicConvert(filePath)
+                  await heicConvert(filePath)
+                  console.log("done")
                 }
-
               }
             })
             
         }) 
-          }
-          
-        
+          }   
     });
   });
 });
 
   })
+  console.log("DONE")
 }
 
 
- loopFolders()
+const getAllFolders = async (folderPath) => {
 
- CompressBlogPosts()
- CompressPages()
+  const folders = await fs.promises.readdir(folderPath)
+  return folders
+
+}
+
+
+const convertFilesInFolder = async (folderPath) => {
+  const contents = await fs.promises.readdir(folderPath);
+
+  // Loop over content
+
+  for (let content of contents) {
+    const currentPath = path.join(folderPath, content)
+    const stat = await fs.promises.stat(currentPath)
+    if (stat.isFile()) {
+      const ext = path.extname(currentPath)
+      if (ext === ".HEIC" || ext === ".heic") {
+        await heicConvert(currentPath)
+        console.log(currentPath + " Converted")
+      }
+      
+    } 
+  }
+
+
+}
+
+const convertHEIC = async () => {
+
+  const startingFolder = "_posts/"
+
+ const folders = await getAllFolders(startingFolder)
+
+ // loop over folders and files
+ for (let folder of folders) {
+  const currentPath = path.join(startingFolder, folder)
+  const stat = await fs.promises.stat(currentPath)
+  if (stat.isDirectory()) {
+    await convertFilesInFolder(currentPath)
+  }
+ }
+
+}
+
+
+
+const runAll = async () => {
+
+ await convertHEIC()
+
+ await CompressBlogPosts()
+ await CompressPages()
+
+}
+
+runAll()
+
+
+ 
