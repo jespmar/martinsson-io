@@ -8,23 +8,27 @@ const convert = require('heic-convert');
 
 const heicConvert = async (filePath) => {
 
-await (async () => {
-  const inputBuffer = await promisify(fs.readFile)(filePath);
-  const outputBuffer = await convert({
-    buffer: inputBuffer, // the HEIC file buffer
-    format: 'PNG'        // output format
-  });
-
   const ext = path.extname(filePath)
   const newPath = filePath.replace(ext, ".png")
 
-  if (!path.existSync(newPath)) {
-    await promisify(fs.writeFile)(newPath, outputBuffer);
-  } else return
-  
-})();
+  await fs.promises.stat(newPath).then(() => {
+    console.log("EXIST")
+  })
+  .catch(async () => {
 
-}
+    const inputBuffer = await promisify(fs.readFile)(filePath);
+    const outputBuffer = await convert({
+      buffer: inputBuffer, // the HEIC file buffer
+      format: 'PNG'        // output format
+    });
+
+    console.log("converting from HECI to PNG")
+    await promisify(fs.writeFile)(newPath, outputBuffer);
+
+  })
+    }
+
+
 
 async function CompressBlogPosts() {
   console.log("Compressing Post images")
